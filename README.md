@@ -1,3 +1,3 @@
-# EngineBay.ModuleTemplate
+# EngineBay.Cors
 
-ModuleTemplate module for EngineBay published to [EngineBay.ModuleTemplate](https://www.nuget.org/packages/EngineBay.ModuleTemplate/) on NuGet.
+Cors module for EngineBay published to [EngineBay.Cors](https://www.nuget.org/packages/EngineBay.Cors/) on NuGet.
