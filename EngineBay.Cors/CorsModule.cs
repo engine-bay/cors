@@ -2,10 +2,9 @@ namespace EngineBay.Cors
 {
     using EngineBay.Core;
 
-    public class CorsModule : IModule
+    public class CorsModule : BaseModule
     {
-        /// <inheritdoc/>
-        public IServiceCollection RegisterModule(IServiceCollection services, IConfiguration configuration)
+        public override IServiceCollection RegisterModule(IServiceCollection services, IConfiguration configuration)
         {
             // set CORS policies
             services.AddCors(options =>
@@ -13,7 +12,7 @@ namespace EngineBay.Cors
                 options.AddPolicy(
                     name: "CORS Policy",
                     policy =>
-                    { // todo add this as an env variable
+                    {
                         policy.WithOrigins("*")
                                 .AllowAnyHeader()
                                 .AllowAnyMethod();
@@ -23,13 +22,7 @@ namespace EngineBay.Cors
             return services;
         }
 
-        /// <inheritdoc/>
-        public IEndpointRouteBuilder MapEndpoints(IEndpointRouteBuilder endpoints)
-        {
-            return endpoints;
-        }
-
-        public WebApplication AddMiddleware(WebApplication app)
+        public override WebApplication AddMiddleware(WebApplication app)
         {
             // Use CORS policies
             app.UseCors("CORS Policy");
