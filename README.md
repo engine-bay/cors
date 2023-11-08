@@ -13,3 +13,7 @@ Registering this module will enable [Cross-Origin Resource Sharing (CORS)](https
 ## Registration
 
 See the [Demo Module registration guide](https://github.com/engine-bay/demo-module).
+
+## Dependencies
+
+* [EngineBay.Core](https://github.com/engine-bay/core)
